@@ -41,7 +41,7 @@ app.http('CreateRequirement', {
 
     let info = await transporter.sendMail({
         from: '"Mohammad Samir 👻" <samir.ansari@quickelf.com>',
-        to: 'mdsamiransari2000@gmail.com',
+        to: 'samiransari.18@nshm.edu.in',
         subject: 'Receive Response',
         text: 'Hello World',
         html: `${JSON.stringify(request.body)}}, ${JSON.stringify(context)}, ${request.body.requirement.id}`
