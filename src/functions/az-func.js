@@ -21,6 +21,7 @@ app.http('CreateRequirement', {
     methods: ['POST'],
     authLevel: 'anonymous',
     handler: async (request, context) => {
+    try{
     console.log(`23--> ${JSON.stringify(context)}`)
     const name = request.query.get('name') || await request.text() || 'world';
     // // var keys = Object.keys(request.body);
@@ -47,9 +48,9 @@ app.http('CreateRequirement', {
 
     });
     console.log(`50--> ${info.messageId}`)
-    console.log(`51--> ${process.env.PASS}`);
-    // var poolconnection = await sql.connect(config);
-    // var query = await poolconnection.request().query(`INSERT INTO react.Customers(Description) VALUES(${JSON.stringify(context)})`)
     return { body: `Data inserted, ${JSON.stringify(request.body)}, ${JSON.stringify(request)}, ${JSON.stringify(context)}` };
+    }catch(e){
+        console.log(`53--> ${e}`);
+    }
     }
 });
